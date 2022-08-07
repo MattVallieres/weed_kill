@@ -1,2 +1,2 @@
-# weed_kill
+# weed kill
 final project - concordia bootcamp
