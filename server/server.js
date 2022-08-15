@@ -1,13 +1,33 @@
+"use strict";
+
 const express = require("express");
+const morgan = require("morgan");
+
+const { 
+  getAllMonth, 
+  getSpecificMonth,
+  getAllReservations,
+  getSpecificReservations,
+  addReservation,
+  updateReservation,
+  deleteReservation,
+} = require("./handler");
+
 const PORT = 8000;
 
-// hello why are you not in my commit?!
-
 express()
-  .get("/", (req, res) => {
-    res.status(200).json({status: 200, message: "Hello World!"});
-  })
+  .use(morgan("tiny"))
+  .use(express.json())
 
-  .listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`);
-  });
+// RESTful endpoints
+// -----------------------------------
+.get("/api/getAllMonth", getAllMonth)
+.get("/api/getSpecificMonth/:month", getSpecificMonth)
+.get("/api/getAllReservations", getAllReservations)
+.get("/api/getSpecificReservation/:reservation", getSpecificReservations)
+.post("/api/addReservation", addReservation)
+.patch("/api/updateReservation", updateReservation)
+.delete("/api/deleteReservation/:reservation", deleteReservation)
+// -----------------------------------
+
+.listen(PORT, () => console.info(`Listening on port ${PORT}... We're Going live!`));
