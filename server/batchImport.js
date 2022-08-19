@@ -17,23 +17,23 @@ let newSpots = {
   spots: Object.values(spots.August),
 };
 
-console.log(spots);
+console.log(newSpots);
 
 // making new reservations as an object
 let newReservations = [];
-reservations.forEach((reservations) => {
+reservations.forEach((reservation) => {
   newReservations.push({
-    _id: reservations.id,
-    month: reservations.month,
-    spot: reservations.spot,
-    firstname: reservations.firstname,
-    lastname: reservations.lastname,
-    email: reservations.email,
-    zipcode: reservations.zipcode,
+    _id: reservation.id,
+    month: reservation.month,
+    spot: reservation.spot,
+    firstname: reservation.firstname,
+    lastname: reservation.lastname,
+    email: reservation.email,
+    zipcode: reservation.zipcode,
   });
 });
 
-console.log(reservations);
+console.log(newReservations);
 
 // for our spots
 const spotImport = async () => {

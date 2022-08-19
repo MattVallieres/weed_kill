@@ -33,13 +33,12 @@ const spots = {
 // these are who reserved a spot
 const reservations = [
     {
-        _id: "f3f6a8f3-dcf6-4e84-88c4-5b0d009082ac",
         month: "August",
         spot: "A",
         firstname: "Nick",
         lastname: "Vessey",
         email: "NickVessey@otter.ca",
-        zipcode: "0TT T3R"
+        zipcode: "0TT T3R",
     },
 ];
 
